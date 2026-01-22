@@ -1,4 +1,3 @@
-
 "use client";
 import { useState, useEffect, useRef } from "react";
 import MessageBubble from "./MessageBubble";
@@ -14,13 +13,13 @@ export default function ChatBox() {
     if (!input.trim()) return;
 
     setMessages((prev) => [...prev, { text: input, role: "user" }]);
-    const userText = input;
+    const text = input;
     setInput("");
 
     setTimeout(() => {
       setMessages((prev) => [
         ...prev,
-        { text: `Bot menjawab: ${userText}`, role: "bot" },
+        { text: `Bot menjawab: ${text}`, role: "bot" },
       ]);
     }, 600);
   };
@@ -57,4 +56,4 @@ export default function ChatBox() {
       </div>
     </div>
   );
-          }
+}
